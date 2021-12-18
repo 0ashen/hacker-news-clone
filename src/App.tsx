@@ -1,7 +1,6 @@
 import React from 'react';
+import { Router } from './routes/Router';
 
-export const App = () => (
-    <div className="App">
-
-    </div>
-);
+export const App = () => {
+   return <Router />;
+};
