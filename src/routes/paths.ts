@@ -5,9 +5,9 @@ function path(root: string, ...sublinks: string[]): string {
 export const ROOTS = '' as const;
 
 export enum PAGES {
-   Page = 'page'
+   Home = 'home'
 }
 
 export const PATHS = {
-   Page: path(ROOTS, PAGES.Page)
+   Home: path(ROOTS, PAGES.Home)
 } as const;

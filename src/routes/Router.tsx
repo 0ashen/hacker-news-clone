@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useRoutes } from 'react-router-dom';
 
 import { PAGES, PATHS, ROOTS } from './paths';
-import { Page } from '../pages/Page';
+import { NewsList } from '../pages/NewsList/NewsList';
 
 export function Router() {
    return useRoutes([
@@ -27,8 +27,8 @@ export function Router() {
          path: ROOTS,
          children: [
             {
-               path: PAGES.Page,
-               element: <Page />
+               path: PAGES.Home,
+               element: <NewsList />
             }
          ]
       }

@@ -7,7 +7,10 @@ export const Common = createGlobalStyle`
   ${normalize}
   html {
     box-sizing: border-box;
-    ${mediaFactor.mobile};
+    ${mediaFactor.desktopBig};
+    ${mediaFactor.desktopMid};
+    
+    
   }
 
   body {
@@ -18,7 +21,10 @@ export const Common = createGlobalStyle`
     min-height: 100vh;
     // background-color: ;
     font-family: ${theme.font.main};
-    font-size: 18px;
+    font-size: 18rem;
+    color: ${theme.palette.gray['600']};
+    background-color: ${theme.palette.gray['100']};
+    font-weight: 400;
     //max-width: calc(100% - 40px);
     //margin-left: auto;
     //margin-right: auto;
