@@ -1,12 +1,10 @@
 import React, { VFC } from 'react';
 import styled from 'styled-components';
 import { IconLogo } from '../assets/IconLogo';
-import { Link } from 'react-router-dom';
-import { PATHS } from '../routes/paths';
 
 type Props = {};
 
-export const LogoWrapper = styled(Link)`
+export const LogoWrapper = styled.div`
    display: flex;
    align-items: center;
 `;
@@ -17,7 +15,7 @@ export const Text = styled.p`
 
 export const Logo: VFC<Props> = (props) => {
    return (
-      <LogoWrapper to={PATHS.Home}>
+      <LogoWrapper>
          <IconLogo width="35rem" height="35rem" />
          <Text>Hacker News</Text>
       </LogoWrapper>

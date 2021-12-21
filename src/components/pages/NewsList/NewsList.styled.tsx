@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { GlobalInner } from '../../ui/GlobalInner';
+import { GlobalInner } from '../../../ui/GlobalInner';
 
 export const NewsListWrapper = styled.div``;
 

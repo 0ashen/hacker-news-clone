@@ -1,7 +1,8 @@
 import React, { VFC } from 'react';
 import { Body, List, NewsListWrapper, Title } from './NewsList.styled';
-import { Header } from '../../components/Header/Header';
-import { NewsCard } from '../../components/NewsCard/NewsCard';
+import axios from 'axios';
+import { Header } from '../../Header/Header';
+import { NewsCard } from '../../NewsCard/NewsCard';
 
 type Props = {};
 
@@ -14,6 +15,15 @@ export const NewsList: VFC<Props> = (props) => {
             <List>
                <NewsCard />
             </List>
+            <button
+               onClick={() => {
+                  axios.get('api/hello').then((res) => {
+                     console.log(res.data);
+                  });
+               }}
+            >
+               get data
+            </button>
          </Body>
       </NewsListWrapper>
    );
