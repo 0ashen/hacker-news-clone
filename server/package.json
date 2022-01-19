@@ -6,11 +6,10 @@
   "main": "build/index.js",
   "type": "commonjs",
   "scripts": {
-    "removeCacheAndBuildAndMove": "yarn removeCache && yarn buildTs && yarn move",
+    "removeCacheAndBuildAndMove": "yarn removeCache && yarn build && yarn move",
     "removeCache": "rm -rf build && rm -rf ../.next && rm -rf ../node_modules/server",
-    "build": "npx webpack --config webpack.config.cjs --stats-error-details",
     "buildDesclaration": "tsc --declaration",
-    "buildTs": "tsc",
+    "build": "tsc",
     "move": "cd .. && rsync -av --progress server node_modules --exclude node_modules --exclude .idea"
   },
   "author": "",
