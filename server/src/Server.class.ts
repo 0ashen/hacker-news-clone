@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import { config } from './config';
-import { NewsItem, NewsItemExtended, NewsItemId } from './@types/NewsItem.type';
+import { NewsItem, NewsItemExtended, NewsItemId } from './@types';
 import moment from 'moment';
 
 
