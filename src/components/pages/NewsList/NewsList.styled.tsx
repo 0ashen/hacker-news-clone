@@ -3,7 +3,9 @@ import { GlobalInner } from '../../../ui/GlobalInner';
 
 export const NewsListWrapper = styled.div``;
 
-export const Body = styled(GlobalInner)``;
+export const Body = styled(GlobalInner)`
+   padding-bottom: 50rem;
+`;
 export const Title = styled.h1`
    padding-top: 50rem;
    padding-bottom: 50rem;

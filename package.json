@@ -2,29 +2,40 @@
   "name": "my-app",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cd server && yarn removeCacheAndBuildAndMove && cd .. && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prettier-format": "prettier --config .prettierrc ./src/**/*.{ts,tsx,scss,graphql,json} --write"
   },
   "dependencies": {
-    "axios": "^0.24.0",
+    "@react-icons/all-files": "^4.1.0",
+    "@reduxjs/toolkit": "^1.7.1",
+    "moment": "^2.29.1",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "@reduxjs/toolkit": "^1.7.1",
+    "react-icons": "^4.3.1",
+    "react-redux": "^7.2.6",
+    "reflect-metadata": "^0.1.13",
+    "regenerator-runtime": "^0.13.9",
+    "server": "./server",
     "styled-components": "^5.3.3",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "tsyringe": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "17.0.1",
     "@types/react": "17.0.37",
+    "@types/react-redux": "^7.1.21",
     "@types/styled-components": "^5.1.18",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "8.5.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "6.0.0",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -36,9 +47,6 @@
     "eslint-plugin-react": "^7.25.2",
     "eslint-plugin-react-hooks": "4.2.0",
     "prettier": "^2.5.1",
-    "eslint": "8.5.0",
-    "eslint-config-next": "12.0.7",
-    "typescript": "4.5.4",
-    "babel-plugin-styled-components": "^1.12.0"
+    "typescript": "4.5.4"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.1",
+  "description": "",
+  "typings": "build/index.d.ts",
+  "main": "build/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "removeCacheAndBuildAndMove": "yarn removeCache && yarn buildTs && yarn move",
+    "removeCache": "rm -rf build && rm -rf ../.next && rm -rf ../node_modules/server",
+    "build": "npx webpack --config webpack.config.cjs --stats-error-details",
+    "buildDesclaration": "tsc --declaration",
+    "buildTs": "tsc",
+    "move": "cd .. && rsync -av --progress server node_modules --exclude node_modules --exclude .idea"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.6.1",
+    "moment": "^2.29.1",
+    "reflect-metadata": "^0.1.13",
+    "regenerator-runtime": "^0.13.9",
+    "tsyringe": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/webpack": "^5.28.0",
+    "hacker-news-types": "git://github.com/karpour/hackernews-api-ts.git#b7cba8503755bdbd8d8976e76284a28192c1f82f",
+    "typescript": "^4.5.4"
+  }
+}

@@ -9,6 +9,10 @@ export const NewsCardWrapper = styled.div`
    border: 1rem solid ${theme.palette.gray['400']};
    min-height: 100rem;
    display: flex;
+
+   &:not(:last-child) {
+      border-bottom: none;
+   }
 `;
 export const Counters = styled.div`
    display: flex;
@@ -38,12 +42,53 @@ export const Inner = styled.div`
 `;
 export const Title = styled.div`
    font-weight: 400;
-   text-align: center;
    font-size: 25rem;
    padding-top: 10rem;
+   padding-bottom: 15rem;
 `;
 
 export const OpenNews = styled(Button)`
    align-self: center;
    margin-left: auto;
+`;
+
+export const Params = styled.div`
+   display: flex;
+
+   & > div,
+   & > a {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+         padding-right: 15rem;
+      }
+
+      p {
+         margin-left: 6px;
+      }
+
+      svg {
+         height: auto;
+      }
+   }
+
+   & > div:nth-child(1) svg {
+      width: 21rem;
+   }
+
+   & > div:nth-child(2) svg {
+      width: 17rem;
+   }
+
+   & > a:nth-child(3) svg {
+      width: 23rem;
+   }
+`;
+
+export const Link = styled.a`
+   cursor: pointer;
+   &:hover {
+      text-decoration: underline;
+   }
 `;

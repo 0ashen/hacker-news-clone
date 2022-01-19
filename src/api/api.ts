@@ -1,14 +1,17 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { config } from '../config';
+import { NewsItemExtended } from 'server';
 
-export const hackerNewsApi = createApi({
-   reducerPath: 'hackerNewsApi',
-   baseQuery: fetchBaseQuery({ baseUrl: config.api }),
-   endpoints: (builder) => ({
-      getPokemonByName: builder.query<any, any>({
-         query: (name) => `pokemon/${name}`
-      })
-   })
+export const api = createApi({
+   baseQuery: fetchBaseQuery({
+      baseUrl: '/api/'
+   }),
+   endpoints: (builder) => {
+      return {
+         getTopStories: builder.query<NewsItemExtended[], void>({
+            query: () => `topstories`
+         })
+      };
+   }
 });
 
-export const { useGetPokemonByNameQuery } = hackerNewsApi;
+export const { useGetTopStoriesQuery } = api;
