@@ -47,6 +47,7 @@
     "eslint-plugin-react": "^7.25.2",
     "eslint-plugin-react-hooks": "4.2.0",
     "prettier": "^2.5.1",
-    "typescript": "4.5.4"
+    "typescript": "4.5.4",
+    "hacker-news-types": "git://github.com/karpour/hackernews-api-ts.git#b7cba8503755bdbd8d8976e76284a28192c1f82f"
   }
 }
