@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import { config } from './config';
 import { NewsItem, NewsItemExtended, NewsItemId } from './@types';
-import moment from 'moment';
+import * as moment from 'moment';
 
 
 
@@ -121,6 +121,7 @@ export class Server {
       return {
          ...item,
          timestamp: Date.now(),
+         //@ts-ignore
          relativeTime: moment(time * 1000, 'unix').fromNow()
       };
    }
