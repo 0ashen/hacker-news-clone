@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "noEmit": false,
+    "strict": true,
 //    "emitDeclarationOnly": true,
     // Ensure that Babel can safely transpile files i the TypeScript project
 //    "isolatedModules": true,
@@ -44,7 +45,8 @@
     "types": ["node"],
     "typeRoots": ["node_modules/@types", "src/types"],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules/**"],

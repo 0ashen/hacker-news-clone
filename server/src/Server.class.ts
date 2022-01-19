@@ -2,7 +2,9 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import { config } from './config';
 import { NewsItem, NewsItemExtended, NewsItemId } from './@types/NewsItem.type';
-import * as moment from 'moment';
+import moment from 'moment';
+
+
 
 enum RemoveTable {
    TopStories = 'topstories',
@@ -64,6 +66,7 @@ export class Server {
    private async subscribeToTable(table: RemoveTable): Promise<void> {
       return new Promise<void>((res) => {
          this.api.child(table).on('value', (snapshot) => {
+            // todo deprecate "any type" in snapshot.val() below
             this.setTable(table, snapshot.val());
             res();
          });
@@ -122,7 +125,7 @@ export class Server {
       };
    }
 
-   public async getDataSet(set: Dataset): Promise<NewsItemExtended[]> {
+   public async getDataSet(set: Dataset): Promise<(NewsItemExtended | undefined)[]> {
       await this.startSyncOnce();
 
       if (set === Dataset.TopStories) {
@@ -136,16 +139,18 @@ export class Server {
                return new Promise((res) => {
                   res(newsItem);
                });
-            } else {
-               return this.fetchItem(id);
             }
+            return this.fetchItem(id);
          });
          await Promise.all(promiseList);
 
-         return newsIds.map((id) => {
+         const result = newsIds.map((id) => {
             const newsItem = this.store.items.find((newsItem) => newsItem.id === id);
             return newsItem;
          });
+
+         return result
       }
+      return []
    }
 }
