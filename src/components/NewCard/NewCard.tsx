@@ -1,10 +1,10 @@
 import React, { VFC } from 'react';
 import { Counters, Inner, Link, NewsCardWrapper, OpenNews, Params, Title } from './NewCard.styled';
-import { NewsItem } from 'server';
 import { AiOutlineClockCircle, AiOutlineLink } from 'react-icons/ai';
 import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt';
+import { NewsItemExtended } from '../../../server/src';
 
-type Props = NewsItem;
+type Props = NewsItemExtended;
 
 export const NewCard: VFC<Props> = ({
    type,
