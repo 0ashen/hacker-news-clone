@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@types/webpack": "^5.28.0",
-    "hacker-news-types": "git://github.com/karpour/hackernews-api-ts.git#b7cba8503755bdbd8d8976e76284a28192c1f82f",
     "typescript": "^4.5.4"
   }
 }

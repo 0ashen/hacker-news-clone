@@ -7,4 +7,4 @@ export { Dataset } from './Server.class';
 export const Server = container.resolve(server);
 
 // types
-export type { NewsItemExtended, NewsItem, NewsItemId } from './@types/NewsItem.type';
+export type { NewsItemExtended, NewsItem, NewsItemId } from './@types';
