@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "cd server && yarn removeCacheAndBuildAndMove && cd .. && next dev",
-    "build": "cd server && yarn build && cd .. && next build",
+    "build": "cd server && yarn removeCacheAndBuildAndMove && cd .. && next build",
     "start": "next start",
     "lint": "next lint",
     "prettier-format": "prettier --config .prettierrc ./src/**/*.{ts,tsx,scss,graphql,json} --write"
