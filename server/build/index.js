@@ -4,8 +4,7 @@ exports.Server = exports.Dataset = void 0;
 require("reflect-metadata");
 require("regenerator-runtime");
 const Server_class_1 = require("./Server.class");
-const tsyringe_1 = require("tsyringe");
 var Server_class_2 = require("./Server.class");
 Object.defineProperty(exports, "Dataset", { enumerable: true, get: function () { return Server_class_2.Dataset; } });
-exports.Server = tsyringe_1.container.resolve(Server_class_1.Server);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsNEJBQTBCO0FBQzFCLCtCQUE2QjtBQUM3QixpREFBa0Q7QUFDbEQsdUNBQXFDO0FBRXJDLCtDQUF5QztBQUFoQyx1R0FBQSxPQUFPLE9BQUE7QUFDSCxRQUFBLE1BQU0sR0FBRyxvQkFBUyxDQUFDLE9BQU8sQ0FBQyxxQkFBTSxDQUFDLENBQUMifQ==
+exports.Server = new Server_class_1.Server();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsNEJBQTBCO0FBQzFCLCtCQUE2QjtBQUM3QixpREFBa0Q7QUFFbEQsK0NBQXlDO0FBQWhDLHVHQUFBLE9BQU8sT0FBQTtBQUNILFFBQUEsTUFBTSxHQUFHLElBQUkscUJBQU0sRUFBRSxDQUFDIn0=

@@ -4,9 +4,11 @@ import { theme } from '../styles/theme';
 import { Common } from '../styles/common';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from '../libs/store/store';
+import { initializeStore } from '../libs/store/store';
 
 function MyApp({ Component, pageProps }: AppProps) {
+   const store = initializeStore(pageProps.initialState);
+
    return (
       <Provider store={store}>
          <ThemeProvider theme={theme}>

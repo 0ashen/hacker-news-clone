@@ -4,9 +4,7 @@ import { config } from './config';
 import { NewsItem, NewsItemExtended, NewsItemId } from './@types';
 import * as moment from 'moment';
 
-
-
-enum RemoveTable {
+enum RemoteTable {
    TopStories = 'topstories',
    NewStories = 'newstories',
    DestStories = 'beststories',
@@ -22,7 +20,7 @@ export enum Dataset {
 }
 
 type Store = {
-   tables: { [x in RemoveTable]: NewsItemId[] };
+   tables: { [x in RemoteTable]: NewsItemId[] };
    items: NewsItemExtended[];
 };
 
@@ -51,10 +49,10 @@ export class Server {
          .database()
          .ref('v0'),
       private store: Store = {
-         tables: Object.values(RemoveTable).reduce((acc, cur) => {
+         tables: Object.values(RemoteTable).reduce((acc, cur) => {
             acc[cur] = [];
             return acc;
-         }, {} as { [x in RemoveTable]: [] }),
+         }, {} as { [x in RemoteTable]: [] }),
          items: []
       }
    ) {}
@@ -63,7 +61,7 @@ export class Server {
       this.sync._status = status;
    }
 
-   private async subscribeToTable(table: RemoveTable): Promise<void> {
+   private async subscribeToTable(table: RemoteTable): Promise<void> {
       return new Promise<void>((res) => {
          this.api.child(table).on('value', (snapshot) => {
             // todo deprecate "any type" in snapshot.val() below
@@ -87,7 +85,7 @@ export class Server {
       if (this.sync._status === SyncStatus.Off) {
          this.setSyncStatus(SyncStatus.Pending);
          this.sync.promise = Promise.all(
-            Object.values(RemoveTable).map((table) => this.subscribeToTable(table))
+            Object.values(RemoteTable).map((table) => this.subscribeToTable(table))
          ).finally(() => {
             this.setSyncStatus(SyncStatus.On);
          });
@@ -98,7 +96,7 @@ export class Server {
       }
    }
 
-   private setTable(table: RemoveTable, data: NewsItemId[]): void {
+   private setTable(table: RemoteTable, data: NewsItemId[]): void {
       this.store.tables[table] = data;
    }
 
@@ -132,7 +130,7 @@ export class Server {
       if (set === Dataset.TopStories) {
          const curDate = Date.now();
 
-         const newsIds = this.store.tables[RemoveTable.TopStories].slice(0, 30);
+         const newsIds = this.store.tables[RemoteTable.TopStories].slice(0, 30);
 
          const promiseList = newsIds.map((id) => {
             const newsItem = this.store.items.find((newsItem) => newsItem.id === id);
