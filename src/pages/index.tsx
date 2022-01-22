@@ -1,8 +1,26 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import { NewsList } from '../components/pages/NewsList/NewsList';
+import { Dataset, Server } from 'server';
 
-const index: NextPage = () => {
-   return <NewsList />;
+export default NewsList;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+   const data = await Server.getDataSet(Dataset.TopStories);
+   return {
+      props: {
+         initialState: {
+            api: {
+               queries: {
+                  ['getTopStories(undefined)']: {
+                     data,
+                     status: 'fulfilled',
+                     requestId: '4f6kGXxTGtRt4SWyRbhIR',
+                     startedTimeStamp: Date.now(),
+                     fulfilledTimeStamp: Date.now()
+                  }
+               }
+            }
+         }
+      }
+   };
 };
-
-export default index;

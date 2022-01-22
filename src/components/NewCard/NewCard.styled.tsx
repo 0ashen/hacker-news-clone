@@ -21,6 +21,7 @@ export const Counters = styled.div`
    column-gap: 38rem;
    border-right: 1rem solid ${theme.palette.gray['400']};
    padding-right: 30rem;
+   width: 228rem;
 
    div {
       b {

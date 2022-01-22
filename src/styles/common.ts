@@ -10,7 +10,6 @@ export const Common = createGlobalStyle`
     ${mediaFactor.desktopBig};
     ${mediaFactor.desktopMid};
     
-    
   }
 
   body {

@@ -22,7 +22,7 @@ export const mediaFactor = {
    `,
    desktopBig: `
       @media ${device.desktopBig} {
-         font-size: calc(0.777604977vw / ${DesignLayoutSize.Desktop / 100});
+         font-size: calc(0.9px);
       }
    `
 };

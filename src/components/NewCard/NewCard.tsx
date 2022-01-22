@@ -28,30 +28,34 @@ export const NewCard: VFC<Props> = ({
    return (
       <NewsCardWrapper>
          <Counters>
-            <div>
-               {score && <b>{score}</b>}
-               <p>points</p>
-            </div>
-            <div>
-               {descendants && <b>{descendants}</b>}
-               <p>comments</p>
-            </div>
+            {score > 1 && (
+               <div>
+                  <b>{score}</b>
+                  <p>points</p>
+               </div>
+            )}
+            {typeof descendants === 'number' && (
+               <div>
+                  <b>{descendants}</b>
+                  <p>comments</p>
+               </div>
+            )}
          </Counters>
          <Inner>
             <Title>{title}</Title>
             <Params>
                <div>
                   <AiOutlineClockCircle />
-                  <p>{relativeTime && relativeTime}</p>
+                  <p>{relativeTime}</p>
                </div>
                <div>
                   {/*todo add link to profile*/}
                   <FaUserAlt />
-                  <p>{by && by}</p>
+                  <p>{by}</p>
                </div>
                <Link href={url} target="_blank" title="Open in new tab">
                   <AiOutlineLink />
-                  <p>{by && by}</p>
+                  <p>{by}</p>
                </Link>
             </Params>
          </Inner>

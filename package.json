@@ -2,7 +2,8 @@
   "name": "my-app",
   "private": true,
   "scripts": {
-    "dev": "cd server && yarn removeCacheAndBuildAndMove && cd .. && next dev",
+    "dev": "next dev",
+    "devWithBuildServer": "cd server && yarn removeCacheAndBuildAndMove && cd .. && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -11,8 +12,10 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@reduxjs/toolkit": "^1.7.1",
+    "abort-controller": "^3.0.0",
     "moment": "^2.29.1",
     "next": "12.0.7",
+    "next-redux-wrapper": "^7.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
