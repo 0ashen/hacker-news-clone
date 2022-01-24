@@ -2,7 +2,7 @@ import React, { VFC } from 'react';
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.ul`
-   padding-top: 15rem;
+   padding-top: 30rem;
    padding-bottom: 30rem;
    display: flex;
    justify-content: center;

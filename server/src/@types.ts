@@ -1,6 +1,7 @@
 export type NewsItemExtended = HackerNewsItem & {
    timestamp: number
    relativeTime?: string
+   hostname: string | null;
 }
 
 

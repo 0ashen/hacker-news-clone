@@ -66,7 +66,7 @@ export const Params = styled.div`
       }
 
       p {
-         margin-left: 6px;
+         margin-left: 6rem;
       }
 
       svg {
@@ -87,8 +87,14 @@ export const Params = styled.div`
    }
 `;
 
-export const Link = styled.a`
+export const ExternalLink = styled.a`
    cursor: pointer;
+   p {
+      max-width: 50ch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
    &:hover {
       text-decoration: underline;
    }

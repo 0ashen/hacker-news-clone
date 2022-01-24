@@ -1,6 +1,7 @@
 export declare type NewsItemExtended = HackerNewsItem & {
     timestamp: number;
     relativeTime?: string;
+    hostname: string | null;
 };
 export declare type NewsItem = HackerNewsItem;
 export declare type NewsItemId = HackerNewsItemId;

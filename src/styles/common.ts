@@ -9,7 +9,7 @@ export const Common = createGlobalStyle`
     box-sizing: border-box;
     ${mediaFactor.desktopBig};
     ${mediaFactor.desktopMid};
-    
+
   }
 
   body {
@@ -27,7 +27,22 @@ export const Common = createGlobalStyle`
     //max-width: calc(100% - 40px);
     //margin-left: auto;
     //margin-right: auto;
-    //overflow: hidden;
+    overflow-y: scroll;
+
+    .github-corner {
+      color: #FB651C;
+
+      svg {
+        fill: rgb(49, 47, 48);
+        position: fixed;
+        left: calc(100vw - 20px);
+        transform: translateX(-100%);
+        top: 0;
+        border: 0;
+        width: 85rem;
+        height: 85rem;
+      }
+    }
   }
 
   * {

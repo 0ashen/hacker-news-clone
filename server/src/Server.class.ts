@@ -115,9 +115,16 @@ export class Server {
    }
 
    private extendNewsItem(item: NewsItem): NewsItemExtended {
-      const { time } = item;
+      const { time, url } = item;
+      let hostname = null;
+      try {
+         hostname = new URL(url).hostname;
+      } catch (e) {
+
+      }
       return {
          ...item,
+         hostname,
          timestamp: Date.now(),
          //@ts-ignore
          relativeTime: moment(time * 1000, 'unix').fromNow()
