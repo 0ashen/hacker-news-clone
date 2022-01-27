@@ -6,10 +6,12 @@ const GRAY = {
    500: '#A4A4A4',
    600: '#414042'
 };
+
 const palette = {
    white: '#ffffff',
    background: '#000',
    orange: {
+      lighten: '#FEF8F1',
       main: '#FB651C'
    },
    gray: GRAY

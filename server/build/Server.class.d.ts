@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import { NewsItemExtended, NewsItemId } from './@types';
-declare enum RemoveTable {
+declare enum RemoteTable {
     TopStories = "topstories",
     NewStories = "newstories",
     DestStories = "beststories",
@@ -16,7 +16,7 @@ export declare enum Dataset {
 }
 declare type Store = {
     tables: {
-        [x in RemoveTable]: NewsItemId[];
+        [x in RemoteTable]: NewsItemId[];
     };
     items: NewsItemExtended[];
 };
