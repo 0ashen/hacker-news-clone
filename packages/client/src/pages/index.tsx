@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import { Dataset, Server } from 'server';
+// import { Dataset, Server } from 'server';
 import styled from 'styled-components';
 import React from 'react';
 import { useGetTopStoriesQuery } from '../api/api';
@@ -30,7 +30,7 @@ const NewsList: NextPage<Props> = (props) => {
 export default NewsList;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-   const data = await Server.getDataSet(Dataset.TopStories);
+   // const data = await Server.getDataSet(Dataset.TopStories);
    return {
       props: {
          initialState: {

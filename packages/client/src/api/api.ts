@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { NewsItemExtended } from 'server';
+// import { NewsItemExtended } from 'server';
 
 export const api = createApi({
    baseQuery: fetchBaseQuery({
@@ -8,7 +8,7 @@ export const api = createApi({
    tagTypes: ['Posts'],
    endpoints: (builder) => {
       return {
-         getTopStories: builder.query<NewsItemExtended[], void>({
+         getTopStories: builder.query<{ }[], void>({
             query: () => `/topstories`,
             providesTags: ['Posts'],
             keepUnusedDataFor: 1000 * 60,
