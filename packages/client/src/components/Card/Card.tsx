@@ -1,11 +1,12 @@
 import React, { VFC } from 'react';
 import { Counters, Inner, NewsCardWrapper, OpenNews, Title } from './Card.styled';
-import { NewsItemExtended } from '../../../../server/_old/src';
+// import { NewsItemExtended } from '../../../../server/_old/src';
 import Link from 'next/link';
 import { NewsParams } from '../NewsParams';
 
-type Props = NewsItemExtended;
+type Props = { };
 
+//@ts-ignore
 export const Card: VFC<Props> = (props) => {
    const {
       type,
