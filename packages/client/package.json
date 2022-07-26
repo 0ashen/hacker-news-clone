@@ -20,7 +20,6 @@
     "react-redux": "^7.2.6",
     "react-toggle": "^4.1.2",
     "react-use": "^17.3.2",
-    "server": "./server",
     "styled-components": "^5.3.3",
     "styled-normalize": "^8.0.7"
   },

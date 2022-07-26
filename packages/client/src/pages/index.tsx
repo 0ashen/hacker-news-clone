@@ -17,7 +17,7 @@ const NewsList: NextPage<Props> = (props) => {
    return (
       <GeneralLayout>
          <Head>
-            <title>Hacker News</title>
+            <title>Hacker News test</title>
          </Head>
          <List>
             {data?.map((newsItem) => (
