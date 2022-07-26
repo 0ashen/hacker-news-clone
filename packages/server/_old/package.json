@@ -10,7 +10,7 @@
     "removeCache": "rm -rf build && rm -rf ../.next && rm -rf ../node_modules/server",
     "buildDesclaration": "tsc --declaration",
     "build": "tsc",
-    "move": "cd .. && rsync -av --progress server node_modules --exclude node_modules --exclude .idea"
+    "move": "cd ../../.. && rsync -av --progress server node_modules --exclude node_modules --exclude .idea"
   },
   "author": "",
   "license": "ISC",

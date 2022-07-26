@@ -1,6 +1,6 @@
 import React, { VFC } from 'react';
 import { Counters, Inner, NewsCardWrapper, OpenNews, Title } from './Card.styled';
-import { NewsItemExtended } from '../../../server/src';
+import { NewsItemExtended } from '../../../../server/_old/src';
 import Link from 'next/link';
 import { NewsParams } from '../NewsParams';
 

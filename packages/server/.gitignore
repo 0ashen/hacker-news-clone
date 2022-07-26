@@ -35,7 +35,13 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-/.next/
 
-node_modules
+# FOLDERS
 .idea
+dist
+node_modules
+
+# FILES
+.DS_Store
+.env
+yarn-error.log

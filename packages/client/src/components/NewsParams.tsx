@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ExternalLink } from './Card/Card.styled';
 import { AiOutlineClockCircle, AiOutlineLink } from 'react-icons/ai';
 import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt';
-import { NewsItemExtended } from '../../server/src';
+import { NewsItemExtended } from '../../../server/_old/src';
 
 export const NewsParamsWrapper = styled.div`
    display: flex;
