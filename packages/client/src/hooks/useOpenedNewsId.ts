@@ -8,5 +8,6 @@ export const useOpenedNewsId = (): string | undefined => {
 
    if (isNaN(_openedNews)) return undefined;
 
+   // @ts-ignore
    return _openedNews;
 };

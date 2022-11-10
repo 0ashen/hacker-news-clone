@@ -41,6 +41,7 @@ export const NewsParamsWrapper = styled.div`
 
 type Props = {};
 
+// @ts-ignore
 export const NewsParams: VFC<Props> = ({ relativeTime, by, hostname, url }) => {
   return (
     <NewsParamsWrapper>
