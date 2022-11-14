@@ -1,14 +1,16 @@
-import dotenv from 'dotenv';
-import express from 'express';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/database';
+import { config } from '~/config';
 
-dotenv.config();
+const hnapi = firebase
+  .initializeApp({
+    databaseURL: config.apiUrl,
+  })
+  .database()
+  .ref('v0');
 
-const { PORT } = process.env;
-
-const app = express();
-
-app.get('/', async (req, res) => {
-  res.send('hello here 1');
+hnapi.child('topstories').on('value', (snapshot) => {
+  console.log('2222&&&&8**&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', snapshot.val());
 });
 
-app.listen(PORT, () => console.log(`Listen on port ${PORT}`));
+console.log('APP STARTED---=================');

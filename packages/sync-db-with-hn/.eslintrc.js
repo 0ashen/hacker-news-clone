@@ -88,5 +88,7 @@ module.exports = {
     'no-plusplus': ['off'],
     'no-unused-expressions': ['off'],
     'no-useless-computed-key': ['off'],
+    'no-useless-constructor': ['off'],
+    'no-underscore-dangle': ['off'],
   },
 };

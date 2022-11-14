@@ -39,3 +39,4 @@ yarn-error.log*
 
 node_modules
 .idea
+mongo-data-volume

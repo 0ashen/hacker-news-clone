@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+  app:
+    build: ./packages/sync-db-with-hn
+    user: "node"
+    working_dir: /home/node/app
+    command: "yarn start"
+    restart: always
+    depends_on:
+      - mongo
+    environment:
+      PORT: 80
+      MONGO_CONNECTION: mongodb://root:pass@mongo:27017
+      MONGO_DB_NAME: boilerplate
+    volumes:
+      - /Users/iusfil/WebstormProjects/hacker-news-redesign/packages/sync-db-with-hn:/home/node/app
+      - /home/node/app/node_modules
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - ./mongo-data-volume:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 8817:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+    ports:
+      - 8081:8081
