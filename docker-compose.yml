@@ -1,7 +1,7 @@
 version: '3.1'
 
 services:
-  app:
+  sync-db-with-hn:
     build: ./packages/sync-db-with-hn
     user: "node"
     working_dir: /home/node/app
@@ -12,7 +12,7 @@ services:
     environment:
       PORT: 80
       MONGO_CONNECTION: mongodb://root:pass@mongo:27017
-      MONGO_DB_NAME: boilerplate
+      MONGO_DB_NAME: hackernews
     volumes:
       - /Users/iusfil/WebstormProjects/hacker-news-redesign/packages/sync-db-with-hn:/home/node/app
       - /home/node/app/node_modules

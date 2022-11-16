@@ -1,16 +1,27 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/database';
-import { config } from '~/config';
+import { HnCategoriesEnum } from 'types/build';
+import { hackerNewsService } from '~/hacker-news';
 
-const hnapi = firebase
-  .initializeApp({
-    databaseURL: config.apiUrl,
-  })
-  .database()
-  .ref('v0');
+async function start(): Promise<void> {
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.TopStories, (data) => {
+  });
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.NewStories, (data) => {
+  });
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.DestStories, (data) => {
+  });
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.MaxItem, (data) => {
+  });
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.AskStories, (data) => {
+  });
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.ShowStories, (data) => {
+  });
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.JobStories, (data) => {
+  });
+  hackerNewsService.subscribeToCategory(HnCategoriesEnum.Updates, (data) => {
+  });
+}
 
-hnapi.child('topstories').on('value', (snapshot) => {
-  console.log('2222&&&&8**&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', snapshot.val());
-});
-
-console.log('APP STARTED---=================');
+start()
+  // eslint-disable-next-line no-console
+  .then(() => console.log('Server started successfully'))
+  // eslint-disable-next-line no-console
+  .catch((error) => console.log('Server start failed', error));

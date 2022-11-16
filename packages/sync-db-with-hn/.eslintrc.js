@@ -90,5 +90,6 @@ module.exports = {
     'no-useless-computed-key': ['off'],
     'no-useless-constructor': ['off'],
     'no-underscore-dangle': ['off'],
+    'lines-between-class-members': ['off'],
   },
 };
