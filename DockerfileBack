@@ -1,0 +1,23 @@
+FROM node:16-alpine
+# fix node gup python3 error
+RUN apk add g++ make py3-pip
+
+RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+
+WORKDIR /home/node/app
+
+USER node
+
+COPY --chown=node:node *.* .
+COPY --chown=node:node ./packages/mongo-service ./packages/mongo-service
+COPY --chown=node:node ./packages/server ./packages/server
+COPY --chown=node:node ./packages/sync-db-with-hn ./packages/sync-db-with-hn
+COPY --chown=node:node ./packages/types ./packages/types
+
+RUN yarn
+RUN yarn lerna-build
+RUN yarn lerna-bootstrap
+
+CMD ["yarn", "lerna-build"]
+CMD ["yarn", "lerna-bootstrap"]
+CMD yarn --cwd packages/sync-db-with-hn start

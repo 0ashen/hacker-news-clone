@@ -2,20 +2,22 @@ version: '3.1'
 
 services:
   sync-db-with-hn:
-    build: ./packages/sync-db-with-hn
+    build:
+      context: .
+      dockerfile: DockerfileBack
     user: "node"
     working_dir: /home/node/app
-    command: "yarn start"
+#    command: "yarn start"
     restart: always
     depends_on:
       - mongo
     environment:
       PORT: 80
-      MONGO_CONNECTION: mongodb://root:pass@mongo:27017
+      MONGO_CONNECTION: mongodb://root:password@mongo:27017
       MONGO_DB_NAME: hackernews
-    volumes:
-      - /Users/iusfil/WebstormProjects/hacker-news-redesign/packages/sync-db-with-hn:/home/node/app
-      - /home/node/app/node_modules
+#    volumes:
+#      - /Users/iusfil/WebstormProjects/hacker-news-redesign/packages/sync-db-with-hn:/home/node/app
+#      - /home/node/app/node_modules
   mongo:
     image: mongo
     restart: always
@@ -26,6 +28,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: password
     ports:
       - 8817:27017
+#    logging:
+#      driver: none
   mongo-express:
     image: mongo-express
     restart: always
@@ -34,6 +38,8 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://root:password@mongo:27017/
     ports:
       - 8081:8081
+#    logging:
+#      driver: none

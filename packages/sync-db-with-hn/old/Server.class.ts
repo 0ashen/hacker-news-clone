@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import moment from 'moment';
 import { NewsItem, NewsItemExtended, NewsItemId } from './@types';
-import { config } from '../config';
+import { config } from '~/config';
 
 enum RemoteTable {
   TopStories = 'topstories',

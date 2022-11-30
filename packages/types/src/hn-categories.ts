@@ -1,4 +1,4 @@
-export enum HnCategoriesEnum {
+export enum HnCategories {
   TopStories = 'topstories',
   NewStories = 'newstories',
   DestStories = 'beststories',

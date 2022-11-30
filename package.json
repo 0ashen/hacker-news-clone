@@ -13,5 +13,8 @@
   ],
   "devDependencies": {
     "lerna": "^5.2.0"
+  },
+  "dependencies": {
+    "lerna-dockerize": "^1.0.4"
   }
 }

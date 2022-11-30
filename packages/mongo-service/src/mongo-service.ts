@@ -1,6 +1,6 @@
 import mongoose, { ConnectOptions } from 'mongoose';
 
-export class MongoService {
+class mongoService {
   connect(): Promise<void> {
     const {
       MONGO_CONNECTION,
@@ -25,3 +25,4 @@ export class MongoService {
     });
   }
 }
+export const MongoService = new mongoService();
